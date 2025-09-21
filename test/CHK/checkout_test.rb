@@ -15,6 +15,9 @@ class ClientTest < Minitest::Test
     assert_equal 15, CheckoutSolution.new.checkout('D'), 'Should return 15 for D'
     assert_equal 40, CheckoutSolution.new.checkout('E'), 'Should return 40 for E'
     assert_equal 10, CheckoutSolution.new.checkout('F'), 'Should return 10 for F'
+    assert_equal 20, CheckoutSolution.new.checkout('G'), 'Should return 20 for G'
+    assert_equal 10, CheckoutSolution.new.checkout('H'), 'Should return 10 for H'
+    assert_equal 35, CheckoutSolution.new.checkout('I'), 'Should return 35 for I'
   end
 
   def test_checkout_multiple_items
@@ -42,6 +45,7 @@ class ClientTest < Minitest::Test
     assert_equal 280, CheckoutSolution.new.checkout('AAAAAEE'), 'Should return 280 for AAAAABEE'
   end
 end
+
 
 
 
