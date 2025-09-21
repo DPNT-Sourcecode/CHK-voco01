@@ -65,19 +65,7 @@ class CheckoutSolution
 
     total_price = 0
 
-    FREE_ITEM_OFFERS.each do |item_sku, offer_details|
-      offer_count = offer_details[:count]
-      free_item_sku = offer_details[:free_item]
-
-      num_times_offer_applies = item_counts[item_sku] / offer_count
-
-      if item_sku == free_item_sku
-        item_counts[free_item_sku] -= num_times_offer_applies
-      else
-        item_counts[free_item_sku] -= num_times_offer_applies if item_counts.key?(free_item_sku)
-      end
-      item_counts[free_item_sku] = [0, item_counts[free_item_sku]].max
-    end
+    
 
     group_items = GROUP_OFFERS[:items]
     group_offer_count = GROUP_OFFERS[:count]
@@ -114,7 +102,29 @@ class CheckoutSolution
 
     total_price
   end
+
+  private
+
+  def _apply_free_item_offers(item_counts)
+    current_offer_price = 0
+    FREE_ITEM_OFFERS.each do |item_sku, offer_details|
+      offer_count = offer_details[:count]
+      free_item_sku = offer_details[:free_item]
+
+      num_times_offer_applies = item_counts[item_sku] / offer_count
+
+      if item_sku == free_item_sku
+        item_counts[free_item_sku] -= num_times_offer_applies
+      else
+        item_counts[free_item_sku] -= num_times_offer_applies if item_counts.key?(free_item_sku)
+      end
+      item_counts[free_item_sku] = [0, item_counts[free_item_sku]].max
+    end
+
+    current_offer_price
+  end
 end
+
 
 
 
