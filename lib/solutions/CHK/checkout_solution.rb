@@ -38,5 +38,3 @@ class CheckoutSolution
     total_price
   end
 end
-
-
