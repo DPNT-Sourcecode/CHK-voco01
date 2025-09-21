@@ -42,8 +42,3 @@ class CheckoutSolution
   end
 
 end
-
-
-
-
-
