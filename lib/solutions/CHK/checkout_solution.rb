@@ -22,10 +22,27 @@ class CheckoutSolution
       item_counts[item] += 1
     end
 
-    return total
+    total_price = 0
+
+    if item_counts.key?('A')
+      num_a = item_counts['A']
+      offer_a_count = OFFERS['A'][:count]
+      offer_a_price = OFFERS['A'][:price]
+
+      num_offers_a = num_a / offer_a_count
+      total_price += num_offers_a * offer_a_price
+      item_counts['A'] %= offer_a_count
+    end
+
+    item_counts.each do |item, count|
+      total_price += PRICES[item] * count
+    end
+
+    return total_price
   end
 
 end
+
 
 
 
