@@ -41,9 +41,16 @@ class CheckoutSolution
 
     OFFERS.each do |item_sku, offers|
       sorted_offers = offers.sort_by { |offer| -offer[:count] }
-      while item_counts[item_sku] >= offer_details[:count]
-        total_price += offer_details[:price]
-        item_counts[item_sku] -= offer_details[:count]
+
+      sorted_offers.each do |offer_details|
+        offer_count = offer_details[:count]
+        offer_price = offer_details[:price]
+
+        while item_counts[item_sku] >= offer_count
+          total_price += offer_price
+          item_counts[item_sku] -= offer_count
+        end
+        
       end
     end
 
@@ -54,3 +61,4 @@ class CheckoutSolution
     total_price
   end
 end
+
