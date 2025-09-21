@@ -7,9 +7,13 @@ class CheckoutSolution
     'D' => 15
   }
 
+
   def checkout(skus)
-    raise 'Not implemented'
+    return -1 if skus.nil? || !skus.is_a?(String)
+
+    return PRICES[skus]
   end
 
 end
+
 
