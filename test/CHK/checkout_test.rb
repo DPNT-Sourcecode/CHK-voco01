@@ -36,7 +36,3 @@ class ClientTest < Minitest::Test
     assert_equal 275, CheckoutSolution.new.checkout('AAAABBCDD'), 'Should return 275 for AAAABBCDD'
   end
 end
-
-
-
-

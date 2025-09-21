@@ -10,7 +10,7 @@ class CheckoutSolution
 
   OFFERS = {
     'A' => [{count: 3, price: 130}, {count: 5, price: 200}],
-    'B' => {count: 2, price: 45}
+    'B' => [{count: 2, price: 45}]
   }.freeze
 
   FREE_ITEM_OFFERS = {
@@ -39,7 +39,8 @@ class CheckoutSolution
       item_counts[free_item_sku] = [0, item_counts[free_item_sku]].max
     end
 
-    OFFERS.each do |item_sku, offer_details|
+    OFFERS.each do |item_sku, offers|
+      sorted_offers = offers.sort_by { |offer| -offer[:count] }
       while item_counts[item_sku] >= offer_details[:count]
         total_price += offer_details[:price]
         item_counts[item_sku] -= offer_details[:count]
@@ -53,8 +54,3 @@ class CheckoutSolution
     total_price
   end
 end
-
-
-
-
-
