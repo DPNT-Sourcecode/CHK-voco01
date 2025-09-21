@@ -9,7 +9,7 @@ class CheckoutSolution
   }.freeze
 
   OFFERS = {
-    'A' => {count: 3, price: 130},
+    'A' => [{count: 3, price: 130}, {count: 5, price: 200}]
     'B' => {count: 2, price: 45}
   }
 
@@ -39,4 +39,5 @@ class CheckoutSolution
     total_price
   end
 end
+
 
