@@ -29,6 +29,16 @@ class CheckoutSolution
 
     total_price = 0
 
+    FREE_ITEM_OFFERS.each do |item_sku, offer_details|
+      offer_count = offer_details[:count]
+      free_item_sku = offer_details[:free_item]
+
+      num_times_offer_applies = item_counts[item_sku] / offer_count
+
+      item_counts[free_item_sku] -= num_times_offer_applies if item_counts.key?(free_item_sku)
+      item_counts[free_item_sku] = 0 if item_counts[free_item_sku] < 0
+    end
+
     OFFERS.each do |item_sku, offer_details|
       while item_counts[item_sku] >= offer_details[:count]
         total_price += offer_details[:price]
@@ -43,6 +53,7 @@ class CheckoutSolution
     total_price
   end
 end
+
 
 
 
