@@ -9,9 +9,13 @@ class CheckoutSolution
   }.freeze
 
   OFFERS = {
-    'A' => [{count: 3, price: 130}, {count: 5, price: 200}]
+    'A' => [{count: 3, price: 130}, {count: 5, price: 200}],
     'B' => {count: 2, price: 45}
-  }
+  }.freeze
+
+  FREE_ITEM_OFFERS = {
+    'E' => {count: 2, free_item: 'B'}
+  }.freeze
 
 
   def checkout(skus)
@@ -39,5 +43,6 @@ class CheckoutSolution
     total_price
   end
 end
+
 
 
