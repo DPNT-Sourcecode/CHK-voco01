@@ -71,7 +71,11 @@ class CheckoutSolution
 
       num_times_offer_applies = item_counts[item_sku] / offer_count
 
-      item_counts[free_item_sku] -= num_times_offer_applies if item_counts.key?(free_item_sku)
+      if item_sku == free_item_sku
+        item_counts[free_item_sku] -= num_times_offer_applies
+      else
+        item_counts[free_item_sku] -= num_times_offer_applies if item_counts.key?(free_item_sku)
+      end
       item_counts[free_item_sku] = [0, item_counts[free_item_sku]].max
     end
 
@@ -96,3 +100,4 @@ class CheckoutSolution
     total_price
   end
 end
+
