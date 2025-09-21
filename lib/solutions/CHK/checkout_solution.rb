@@ -79,6 +79,21 @@ class CheckoutSolution
       item_counts[free_item_sku] = [0, item_counts[free_item_sku]].max
     end
 
+    group_items = GROUP_OFFERS[:items]
+    group_offer_count = GROUP_OFFERS[:count]
+    group_offer_price = GROUP_OFFERS[:price]
+
+    eligible_group_items = item_counts.select  { |item, count| group_items
+                                      .include?(item) && count > 0}
+                                      .flat_map{ |item, count| Array.new(count, item)}.sort_by{|item| PRICES[item]}
+
+    while eligible_group_items.length >= group_offer_count
+      items_for_offer = eligible_group_items.pop(group_offer_count)
+      total_price += group_offer_price
+      items_for_offer.each { |item| item_counts[item] -= 1}
+    end
+    
+
     OFFERS.each do |item_sku, offers|
       sorted_offers = offers.sort_by { |offer| -offer[:count] }
 
@@ -100,4 +115,5 @@ class CheckoutSolution
     total_price
   end
 end
+
 
