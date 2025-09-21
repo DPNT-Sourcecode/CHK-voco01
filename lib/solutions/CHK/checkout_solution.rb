@@ -41,7 +41,9 @@ class CheckoutSolution
   FREE_ITEM_OFFERS = {
     'E' => {count: 2, free_item: 'B'},
     'F' => {count: 3, free_item: 'F'},
-    'N' => {count: 3, free_item: 'M'}
+    'N' => {count: 3, free_item: 'M'},
+    'R' => {count: 3, free_item: 'Q'},
+    'U' => {count: 3, free_item: 'U'},
   }.freeze
 
 
@@ -87,5 +89,6 @@ class CheckoutSolution
     total_price
   end
 end
+
 
 
