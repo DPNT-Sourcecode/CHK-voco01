@@ -6,4 +6,3 @@ class SumSolution
   end
 
 end
-
