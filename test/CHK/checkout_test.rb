@@ -73,12 +73,6 @@ class ClientTest < Minitest::Test
     assert_equal 275, CheckoutSolution.new.checkout('AAAABBCDD'), 'Should return 275 for AAAABBCDD'
     assert_equal 280, CheckoutSolution.new.checkout('AAAAABEE'), 'Should return 280 for AAAAABEE'
     assert_equal 280, CheckoutSolution.new.checkout('AAAAAEE'), 'Should return 280 for AAAAABEE'
+    assert_equal 45, CheckoutSolution.new.checkout('STX'), 'Should return 45 for STX'
   end
 end
-
-
-
-
-
-
-
