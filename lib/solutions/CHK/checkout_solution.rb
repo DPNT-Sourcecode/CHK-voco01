@@ -5,7 +5,8 @@ class CheckoutSolution
     'B' => 30,
     'C' => 20,
     'D' => 15,
-    'E' => 40
+    'E' => 40,
+    'F' => 10
   }.freeze
 
   OFFERS = {
@@ -14,7 +15,8 @@ class CheckoutSolution
   }.freeze
 
   FREE_ITEM_OFFERS = {
-    'E' => {count: 2, free_item: 'B'}
+    'E' => {count: 2, free_item: 'B'},
+    'F' => {count: 3, free_item: 'F'}
   }.freeze
 
 
@@ -50,7 +52,6 @@ class CheckoutSolution
           total_price += offer_price
           item_counts[item_sku] -= offer_count
         end
-        
       end
     end
 
@@ -61,4 +62,5 @@ class CheckoutSolution
     total_price
   end
 end
+
 
