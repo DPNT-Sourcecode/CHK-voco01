@@ -32,6 +32,14 @@ class CheckoutSolution
       num_offers_a = num_a / offer_a_count
       total_price += num_offers_a * offer_a_price
       item_counts['A'] %= offer_a_count
+    elsif item_counts.key?('B')
+      num_b = item_counts['B']
+      offer_b_count = OFFERS['B'][:count]
+      offer_b_price = OFFERS['B'][:price]
+
+      num_offers_b = num_b / offer_b_count
+      total_price += num_offers_b * offer_b_price
+      item_counts['B'] %= offer_b_count
     end
 
     item_counts.each do |item, count|
@@ -42,3 +50,4 @@ class CheckoutSolution
   end
 
 end
+
