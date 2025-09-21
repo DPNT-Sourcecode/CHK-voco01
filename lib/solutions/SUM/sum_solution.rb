@@ -2,7 +2,8 @@
 class SumSolution
 
   def compute(x, y)
-    raise 'Not implemented'
+    x + y
   end
 
 end
+
