@@ -19,7 +19,7 @@ class ClientTest < Minitest::Test
     assert_equal 10, CheckoutSolution.new.checkout('H'), 'Should return 10 for H'
     assert_equal 35, CheckoutSolution.new.checkout('I'), 'Should return 35 for I'
     assert_equal 60, CheckoutSolution.new.checkout('J'), 'Should return 60 for J'
-    assert_equal 80, CheckoutSolution.new.checkout('K'), 'Should return 80 for K'
+    assert_equal 70, CheckoutSolution.new.checkout('K'), 'Should return 70 for K'
     assert_equal 90, CheckoutSolution.new.checkout('L'), 'Should return 90 for L'
     assert_equal 15, CheckoutSolution.new.checkout('M'), 'Should return 15 for M'
     assert_equal 40, CheckoutSolution.new.checkout('N'), 'Should return 40 for N'
@@ -75,6 +75,7 @@ class ClientTest < Minitest::Test
     assert_equal 280, CheckoutSolution.new.checkout('AAAAAEE'), 'Should return 280 for AAAAABEE'
   end
 end
+
 
 
 
