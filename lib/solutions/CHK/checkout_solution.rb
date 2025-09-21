@@ -24,30 +24,19 @@ class CheckoutSolution
 
     total_price = 0
 
-    if item_counts.key?('A')
-      num_a = item_counts['A']
-      offer_a_count = OFFERS['A'][:count]
-      offer_a_price = OFFERS['A'][:price]
-
-      num_offers_a = num_a / offer_a_count
-      total_price += num_offers_a * offer_a_price
-      item_counts['A'] %= offer_a_count
-    elsif item_counts.key?('B')
-      num_b = item_counts['B']
-      offer_b_count = OFFERS['B'][:count]
-      offer_b_price = OFFERS['B'][:price]
-
-      num_offers_b = num_b / offer_b_count
-      total_price += num_offers_b * offer_b_price
-      item_counts['B'] %= offer_b_count
+    OFFERS.each do |item_sku, offer_details|
+      while item_counts[item_sku] >= offer_details[:count]
+        total_price += offer_details[:price]
+        item_counts[item_sku] -= offer_details[:count]
+      end
     end
 
     item_counts.each do |item, count|
       total_price += PRICES[item] * count
     end
 
-    return total_price
+    total_price
   end
-
 end
+
 
