@@ -56,6 +56,11 @@ class ClientTest < Minitest::Test
     assert_equal 45, CheckoutSolution.new.checkout('HHHHH'), 'Should return 45 for HHHHH'
     assert_equal 80, CheckoutSolution.new.checkout('HHHHHHHHHH'), 'Should return 80 for HHHHHHHHHH'
     assert_equal 150, CheckoutSolution.new.checkout('KK'), 'Should return 150 for KK'
+    assert_equal 120, CheckoutSolution.new.checkout('NNN'), 'Should return 120 for NNN'
+    assert_equal 120, CheckoutSolution.new.checkout('NNNM'), 'Should return 120 for NNNM'
+    assert_equal 200, CheckoutSolution.new.checkout('PPPPP'), 'Should return 200 for PPPPP'
+    assert_equal 80, CheckoutSolution.new.checkout('QQQ'), 'Should return 80 for QQQ'
+    assert_equal 150, CheckoutSolution.new.checkout('RRR'), 'Should return 150 for RRR'
   end
 
   def test_checkout_mixed_offers
@@ -65,4 +70,5 @@ class ClientTest < Minitest::Test
     assert_equal 280, CheckoutSolution.new.checkout('AAAAAEE'), 'Should return 280 for AAAAABEE'
   end
 end
+
 
