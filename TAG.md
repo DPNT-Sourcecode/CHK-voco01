@@ -1,7 +1,7 @@
 # How to update and release new client library
 
 Change library version is:
-- `package.json`
+- `Gemfile`
 
 Runner version = Client version + Runner patch
 Example:
