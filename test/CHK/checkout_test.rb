@@ -22,10 +22,11 @@ class ClientTest < Minitest::Test
 
   def test_checkout_special_offers
     assert_equal 130, CheckoutSolution.new.checkout('AAA'), 'Should return 130 for AAA'
-    assert_equal
+    assert_equal 180, CheckoutSolution.new.checkout('AAAA'), 'Should return 180 for AAAA'
   end
 
 end
+
 
 
 
