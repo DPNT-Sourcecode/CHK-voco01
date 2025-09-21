@@ -15,5 +15,11 @@ class ClientTest < Minitest::Test
     assert_equal 15, CheckoutSolution.new.checkout('D'), 'Should return 15 for D'
   end
 
+  def test_checkout_multiple_items
+    assert_equal 80, CheckoutSolution.new.checkout('AB'), 'Should return 80 for AB'
+    assert_equal 35, CheckoutSolution.new.checkout('CD'), 'Should return 35 for CD'
+  end
+
 end
+
 
