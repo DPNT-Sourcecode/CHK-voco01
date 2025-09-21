@@ -27,14 +27,14 @@ class ClientTest < Minitest::Test
     assert_equal 50, CheckoutSolution.new.checkout('P'), 'Should return 50 for P'
     assert_equal 30, CheckoutSolution.new.checkout('Q'), 'Should return 30 for Q'
     assert_equal 50, CheckoutSolution.new.checkout('R'), 'Should return 50 for R'
-    assert_equal 30, CheckoutSolution.new.checkout('S'), 'Should return 30 for S'
+    assert_equal 20, CheckoutSolution.new.checkout('S'), 'Should return 20 for S'
     assert_equal 20, CheckoutSolution.new.checkout('T'), 'Should return 20 for T'
     assert_equal 40, CheckoutSolution.new.checkout('U'), 'Should return 40 for U'
     assert_equal 50, CheckoutSolution.new.checkout('V'), 'Should return 50 for V'
     assert_equal 20, CheckoutSolution.new.checkout('W'), 'Should return 20 for W'
-    assert_equal 90, CheckoutSolution.new.checkout('X'), 'Should return 90 for X'
-    assert_equal 10, CheckoutSolution.new.checkout('Y'), 'Should return 10 for Y'
-    assert_equal 50, CheckoutSolution.new.checkout('Z'), 'Should return 50 for Z'
+    assert_equal 17, CheckoutSolution.new.checkout('X'), 'Should return 17 for X'
+    assert_equal 20, CheckoutSolution.new.checkout('Y'), 'Should return 20 for Y'
+    assert_equal 21, CheckoutSolution.new.checkout('Z'), 'Should return 21 for Z'
   end
 
   def test_checkout_multiple_items
@@ -55,7 +55,7 @@ class ClientTest < Minitest::Test
     assert_equal 30, CheckoutSolution.new.checkout('FFFF'), 'Should return 30 for FFFF'
     assert_equal 45, CheckoutSolution.new.checkout('HHHHH'), 'Should return 45 for HHHHH'
     assert_equal 80, CheckoutSolution.new.checkout('HHHHHHHHHH'), 'Should return 80 for HHHHHHHHHH'
-    assert_equal 150, CheckoutSolution.new.checkout('KK'), 'Should return 150 for KK'
+    assert_equal 120, CheckoutSolution.new.checkout('KK'), 'Should return 120 for KK'
     assert_equal 120, CheckoutSolution.new.checkout('NNN'), 'Should return 120 for NNN'
     assert_equal 120, CheckoutSolution.new.checkout('NNNM'), 'Should return 120 for NNNM'
     assert_equal 200, CheckoutSolution.new.checkout('PPPPP'), 'Should return 200 for PPPPP'
@@ -75,6 +75,7 @@ class ClientTest < Minitest::Test
     assert_equal 280, CheckoutSolution.new.checkout('AAAAAEE'), 'Should return 280 for AAAAABEE'
   end
 end
+
 
 
 
