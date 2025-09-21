@@ -32,6 +32,7 @@ class ClientTest < Minitest::Test
     assert_equal 75, CheckoutSolution.new.checkout('BBB'), 'Should return 75 for BBB'
     assert_equal 80, CheckoutSolution.new.checkout('EEB'), 'Should return 80 for EEB'
     assert_equal 20, CheckoutSolution.new.checkout('FFF'), 'Should return 20 for FFF'
+    assert_equal 30, CheckoutSolution.new.checkout('FFFF'), 'Should return 30 for FFFF'
   end
 
   def test_checkout_mixed_offers
@@ -41,5 +42,6 @@ class ClientTest < Minitest::Test
     assert_equal 280, CheckoutSolution.new.checkout('AAAAAEE'), 'Should return 280 for AAAAABEE'
   end
 end
+
 
 
