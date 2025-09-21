@@ -36,6 +36,7 @@ class CheckoutSolution
     'K' => [{count: 2, price: 150}],
     'P' => [{count: 5, price: 200}],
     'Q' => [{count: 3, price: 80}],
+    'V' => [{count: 2, price: 90}, {count:3, price: 130}],
   }.freeze
 
   FREE_ITEM_OFFERS = {
@@ -89,6 +90,7 @@ class CheckoutSolution
     total_price
   end
 end
+
 
 
 
